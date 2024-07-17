@@ -16,7 +16,7 @@ export default function TalentZone() {
                 <div className="space-y-12">
                     <div className="flex flex-col md:flex-row bg-card text-card-foreground rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
                         <img
-                            src="../assets/sde.jpg"
+                            src="/sde.jpg"
                             alt="Software Development"
                             className="w-full md:w-1/2 object-cover h-48 md:h-auto"
                         />
@@ -37,7 +37,7 @@ export default function TalentZone() {
 
                     <div className="flex flex-col md:flex-row bg-card text-card-foreground rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
                         <img
-                            src="../assets/web-d.jpg"
+                            src="/web-d.jpg"
                             alt="Website Design & Development"
                             className="w-full md:w-1/2 object-cover h-48 md:h-auto"
                         />
@@ -58,7 +58,7 @@ export default function TalentZone() {
 
                     <div className="flex flex-col md:flex-row bg-card text-card-foreground rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
                         <img
-                            src="../assets/md.jpg"
+                            src="/md.jpg"
                             alt="Mobile App Development"
                             className="w-full md:w-1/2 object-cover h-48 md:h-auto"
                         />
