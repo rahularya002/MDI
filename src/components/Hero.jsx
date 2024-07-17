@@ -67,7 +67,7 @@ const Hero = () => {
           </Button>
         </div>
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-          <img src="../assets/web.png" alt="Hero" className="w-full h-96 object-cover" />
+          <img src="/web.png" alt="Hero" className="w-full h-96 object-cover" />
         </div>
       </div>
       <style jsx>{`
