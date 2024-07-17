@@ -51,7 +51,7 @@ const Hero = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center px-4 relative z-10">
         <div className="md:w-1/2 flex flex-col items-start text-left space-y-4">
           <h1 className="text-6xl md:text-7xl font-bold leading-tight font-poppins">
-            Great <span className="bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent">Products</span> are built by<br /> Great{' '}
+            Great <span className="bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent">Products</span><br></br> are built by<br /> Great{' '}
             <span className="bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent">Teams</span>
           </h1>
           <p className="text-lg md:text-xl">
