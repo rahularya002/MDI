@@ -8,7 +8,7 @@ export default function Contact() {
                 <div className="bg-gradient-to-r from-blue-200 to-cyan-200 flex flex-col md:flex-row bg-white shadow-md rounded-lg border border-gray-300">
                     <div className="flex items-center justify-center md:w-1/2">
                         <img
-                            src="../assets/CU.jpg" // Replace with your image URL
+                            src="/CU.jpg" // Replace with your image URL
                             alt="Contact us"
                             className="w-full h-full object-cover rounded-l-lg"
                         />
