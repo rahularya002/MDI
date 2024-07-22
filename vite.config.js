@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: [
-      { find: 'react-intersection-observer', replacement: 'react-intersection-observer' }
-    ]
+    alias: {
+      'react-intersection-observer': require.resolve('react-intersection-observer')
+    }
   },
 });
