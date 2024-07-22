@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import TalentZone from '../components/TalentZone';
 import Contact from '../components/Contact';
 import About from '../components/About';
+import AnimatedBentoGrid from '../components/bentogrid';
 
 const Home = () => {
   return (
@@ -15,9 +16,10 @@ const Home = () => {
       <CustomNavbar />
       <Hero />
       <About />
-      <Component />
       <Partners />
+      <Component />
       <Testimonials />
+      <AnimatedBentoGrid />
       <TalentZone />
       <Contact />
       <Footer />

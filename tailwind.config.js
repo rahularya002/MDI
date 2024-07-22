@@ -12,6 +12,7 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
       },
+      
     },
   },
   darkMode: "class",

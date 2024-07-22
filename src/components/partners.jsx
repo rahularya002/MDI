@@ -1,50 +1,52 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee'; // Corrected import name
+import { motion } from 'framer-motion';
 
 export default function Partners() {
+  const logos = [
+    { alt: "Transistor", src: "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" },
+    { alt: "Reform", src: "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" },
+    { alt: "Tuple", src: "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" },
+    { alt: "SavvyCal", src: "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" },
+    { alt: "Statamic", src: "https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" },
+  ];
+
+  // Duplicate logos to create a seamless scrolling effect
+  const doubledLogos = [...logos, ...logos];
+
   return (
-    <div className="border-t-2 border-b-2 border-gray-300 bg-white py-12">
+    <motion.div
+      className="border-t-2 border-b-2 border-gray-300 bg-white py-12"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
+        <motion.h2
+          className="text-center text-lg font-semibold leading-8 text-gray-900"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           Trusted by the world’s most innovative teams
-        </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <img
-            alt="Transistor"
-            src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            alt="Reform"
-            src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            alt="Tuple"
-            src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            alt="SavvyCal"
-            src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-          />
-          <img
-            alt="Statamic"
-            src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-        </div>
+        </motion.h2>
+        <Marquee speed={40}>
+          {doubledLogos.map((logo, index) => (
+            <motion.div
+              key={index}
+              className="mx-6 my-4"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              <img src={logo.src} alt={logo.alt} className="h-12" />
+            </motion.div>
+          ))}
+        </Marquee>
       </div>
-    </div>
+    </motion.div>
   );
 }

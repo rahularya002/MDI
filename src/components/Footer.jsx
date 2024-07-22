@@ -19,15 +19,15 @@ export default function Footer() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <PhoneIcon className="h-5 w-5" />
-              <span>+1 (555) 123-4567</span>
+              <span> 090150 98315</span>
             </div>
             <div className="flex items-center gap-2">
               <MailIcon className="h-5 w-5" />
-              <span>info@example.com</span>
+              <span>admin@mdinfosystem.com</span>
             </div>
             <div className="flex items-center gap-2">
               <LocateIcon className="h-5 w-5" />
-              <span>123 Main St, Anytown USA</span>
+              <span>418/B Suncity Trade Tower Sector-21, Gurugram-122016 </span>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm">
-        <p>&copy; 2024 Example Inc. All rights reserved.</p>
+        <p>&copy; 2024 MDI. All rights reserved.</p>
       </div>
     </footer>
   );
