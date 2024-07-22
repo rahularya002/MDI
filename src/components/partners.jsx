@@ -4,11 +4,14 @@ import { motion } from 'framer-motion';
 
 export default function Partners() {
   const logos = [
-    { alt: "Transistor", src: "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" },
-    { alt: "Reform", src: "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" },
-    { alt: "Tuple", src: "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" },
-    { alt: "SavvyCal", src: "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" },
-    { alt: "Statamic", src: "https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" },
+    { alt: "GadjetTech", src: "/logo/gadtech.png" },
+    { alt: "ParkDeluxe", src: "/logo/tpd.png" },
+    { alt: "PoctService", src: "/logo/ps.png" },
+    { alt: "ICE", src: "/logo/ice.png" },
+    { alt: "Airofares", src: "/logo/airo.png" },
+    { alt: "JSP", src: "/logo/jsp.png" },
+    { alt: "BlueMed", src: "/logo/bmed.png" },
+    { alt: "Network", src: "/logo/net.png" },
   ];
 
   // Duplicate logos to create a seamless scrolling effect
@@ -42,7 +45,7 @@ export default function Partners() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <img src={logo.src} alt={logo.alt} className="h-12" />
+              <img src={logo.src} alt={logo.alt} className="h-16" /> {/* Adjusted size */}
             </motion.div>
           ))}
         </Marquee>
