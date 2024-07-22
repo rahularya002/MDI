@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -10,9 +10,37 @@ const bentoItems = [
 ];
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
 };
+
+const BentoItem = memo(({ item, index }) => {
+  return (
+    <motion.div
+      key={item.id}
+      variants={itemVariants}
+      className={`relative p-4 rounded-lg shadow-lg bg-white overflow-hidden ${
+        index === 0 ? "sm:row-span-2 sm:col-span-2" :
+        index === 1 ? "sm:row-span-3 sm:col-span-1" :
+        index === 2 ? "sm:row-span-1 sm:col-span-1" :
+        "sm:row-span-2 sm:col-span-1"
+      }`}
+    >
+      <div className="relative overflow-hidden rounded-md h-full">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 p-4">
+          <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+          <p className="text-white text-center">{item.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+});
 
 export default function AnimatedBentoGrid() {
   const controls = useAnimation();
@@ -44,33 +72,16 @@ export default function AnimatedBentoGrid() {
             visible: {
               transition: {
                 staggerChildren: 0.2,
+                staggerDirection: 1,
               },
             },
           }}
         >
           {bentoItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              className={`relative p-4 rounded-lg shadow-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg overflow-hidden ${
-                index === 0 ? "sm:row-span-2 sm:col-span-2" :
-                index === 1 ? "sm:row-span-3 sm:col-span-1" :
-                index === 2 ? "sm:row-span-1 sm:col-span-1" :
-                "sm:row-span-2 sm:col-span-1"
-              }`}
-            >
-              <div className="relative overflow-hidden rounded-md h-full">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 p-4">
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-white text-center">{item.description}</p>
-                </div>
-              </div>
-            </motion.div>
+            <BentoItem key={item.id} item={item} index={index} />
           ))}
         </motion.div>
       </div>
     </section>
   );
 }
-  
