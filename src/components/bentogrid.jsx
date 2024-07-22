@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
-
+import { useInView } from "react-intersection-observer";
 
 const bentoItems = [
   { id: 1, title: "Web Development", description: "Building responsive and dynamic websites.", image: "/web2.jpg" },
